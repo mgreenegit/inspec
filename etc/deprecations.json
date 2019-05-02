@@ -6,6 +6,11 @@
       "action": "warn",
       "prefix": "The 'default' option for attributes is being replaced by 'value' - please use it instead."
     },
+    "attrs_rename_in_metadata": {
+      "action": "ignore",
+      "comment": "See 3854",
+      "prefix": "Inputs should be specified by using the 'inputs' key in profile metadata, not 'attributes'."
+    },
     "aws_resources_in_resource_pack": {
       "comment": "See #3822",
       "action": "warn",
