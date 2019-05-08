@@ -1,19 +1,26 @@
 # Change Log
 <!-- usage documentation: http://expeditor-docs.es.chef.io/configuration/changelog/ -->
-<!-- latest_release 4.3.5 -->
-## [v4.3.5](https://github.com/inspec/inspec/tree/v4.3.5) (2019-05-03)
+<!-- latest_release 4.4.3 -->
+## [v4.4.3](https://github.com/inspec/inspec/tree/v4.4.3) (2019-05-08)
 
-#### Enhancements
-- Add inspec-*-bin to the plugin filter list [#4018](https://github.com/inspec/inspec/pull/4018) ([clintoncwolfe](https://github.com/clintoncwolfe))
+#### Merged Pull Requests
+- Change software name from InSpec to Chef Inspec in documentation [#3987](https://github.com/inspec/inspec/pull/3987) ([IanMadd](https://github.com/IanMadd))
 <!-- latest_release -->
 
 <!-- release_rollup since=4.3.2 -->
 ### Changes since 4.3.2 release
 
+#### New Features
+- Rename &#39;attribute&#39; DSL method to &#39;input&#39; [#4008](https://github.com/inspec/inspec/pull/4008) ([clintoncwolfe](https://github.com/clintoncwolfe)) <!-- 4.4.0 -->
+
 #### Enhancements
+- Improve testing on inputs that do not have values [#4007](https://github.com/inspec/inspec/pull/4007) ([clintoncwolfe](https://github.com/clintoncwolfe)) <!-- 4.4.0 -->
 - Add inspec-*-bin to the plugin filter list [#4018](https://github.com/inspec/inspec/pull/4018) ([clintoncwolfe](https://github.com/clintoncwolfe)) <!-- 4.3.5 -->
 
 #### Merged Pull Requests
+- Change software name from InSpec to Chef Inspec in documentation [#3987](https://github.com/inspec/inspec/pull/3987) ([IanMadd](https://github.com/IanMadd)) <!-- 4.4.3 -->
+- Modernize use of Minitest. [#4023](https://github.com/inspec/inspec/pull/4023) ([zenspider](https://github.com/zenspider)) <!-- 4.4.2 -->
+- Update the omnibus build license to the Chef EULA [#4038](https://github.com/inspec/inspec/pull/4038) ([btm](https://github.com/btm)) <!-- 4.4.1 -->
 - Update resource registry_key documentation example [#4004](https://github.com/inspec/inspec/pull/4004) ([miah](https://github.com/miah)) <!-- 4.3.4 -->
 - Update software names in readme [#4014](https://github.com/inspec/inspec/pull/4014) ([mjingle](https://github.com/mjingle)) <!-- 4.3.3 -->
 <!-- release_rollup -->
