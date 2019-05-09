@@ -4,7 +4,7 @@ require 'logger'
 require 'rubygems/version'
 require 'rubygems/requirement'
 require 'semverse'
-require 'utils/spdx'
+require 'inspec/utils/spdx'
 
 module Inspec
   # Extract metadata.rb information
