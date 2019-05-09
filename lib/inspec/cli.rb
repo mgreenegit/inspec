@@ -127,7 +127,7 @@ class Inspec::InspecCLI < Inspec::BaseCLI
         ui.plain_line("Summary:     #{errors}, #{warnings}")
       end
     end
-    ui.exit 1 unless result[:summary][:valid]
+    ui.exit Inspec::UI::EXIT_USAGE_ERROR unless result[:summary][:valid]
   rescue StandardError => e
     pretty_handle_exception(e)
   end
@@ -174,11 +174,11 @@ class Inspec::InspecCLI < Inspec::BaseCLI
 
     if result && !o[:ignore_errors] == false
       o[:logger].info 'Profile check failed. Please fix the profile before generating an archive.'
-      return ui.exit 1
+      return ui.exit Inspec::UI::EXIT_USAGE_ERROR
     end
 
     # generate archive
-    ui.exit 1 unless profile.archive(o)
+    ui.exit Inspec::UI::EXIT_USAGE_ERROR unless profile.archive(o)
   rescue StandardError => e
     pretty_handle_exception(e)
   end
@@ -268,7 +268,7 @@ class Inspec::InspecCLI < Inspec::BaseCLI
     ui.exit runner.run
   rescue ArgumentError, RuntimeError, Train::UserError => e
     $stderr.puts e.message
-    ui.exit 1
+    ui.exit Inspec::UI::EXIT_USAGE_ERROR
   rescue StandardError => e
     pretty_handle_exception(e)
   end
@@ -288,7 +288,7 @@ class Inspec::InspecCLI < Inspec::BaseCLI
     end
   rescue ArgumentError, RuntimeError, Train::UserError => e
     $stderr.puts e.message
-    ui.exit 1
+    ui.exit Inspec::UI::EXIT_USAGE_ERROR
   rescue StandardError => e
     pretty_handle_exception(e)
   end
@@ -324,7 +324,7 @@ class Inspec::InspecCLI < Inspec::BaseCLI
     # No InSpec tests - just print evaluation output.
     res = (res.respond_to?(:to_json) ? res.to_json : JSON.dump(res)) if o['reporter']&.keys&.include?('json')
     puts res
-    ui.exit 0
+    ui.exit Inspec::UI::EXIT_NORMAL
   rescue RuntimeError, Train::UserError => e
     $stderr.puts e.message
   rescue StandardError => e
@@ -449,5 +449,5 @@ rescue Inspec::Plugin::V2::Exception => v2ex
   else
     Inspec::Log.error 'Run again with --debug for a stacktrace.'
   end
-  ui.exit 2
+  ui.exit Inspec::UI::EXIT_PLUGIN_ERROR
 end
