@@ -102,7 +102,7 @@ require 'inspec/config'
 require 'fetchers/mock'
 require 'inspec/dependencies/cache'
 
-require_relative '../lib/bundles/inspec-supermarket'
+require 'bundles/inspec-supermarket'
 
 require 'train'
 CMD = Train.create('local', command_runner: :generic).connection
@@ -144,9 +144,9 @@ class MockLoader
   }
 
   # pass the os identifier to emulate a specific operating system
-  def initialize(os = nil)
+  def initialize(os = :ubuntu1404)
     # selects operating system
-    @platform = OPERATING_SYSTEMS[os || :ubuntu1404]
+    @platform = OPERATING_SYSTEMS[os]
   end
 
   def backend
@@ -167,6 +167,7 @@ class MockLoader
       path = ::File.join(scriptpath, '/unit/mock/files', x)
       local.file(path)
     }
+
     mockdir = lambda { |x|
       md = Object.new
 
@@ -180,6 +181,7 @@ class MockLoader
       end
       md
     }
+
     emptyfile = lambda {
       mockfile.call('emptyfile')
     }
@@ -714,8 +716,7 @@ class MockLoader
 end
 
 def load_resource(*args)
-  m = MockLoader.new(:ubuntu1404)
-  m.send('load_resource', *args)
+  MockLoader.new.load_resource(*args)
 end
 
 # Used to capture `Inspec.deprecate()` with warn action
