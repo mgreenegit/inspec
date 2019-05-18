@@ -8,7 +8,6 @@
 # Do not add any other code to this code block. Simplecov and
 # coveralls only until the next code block:
 
-if ENV['CI_ENABLE_COVERAGE']
   require 'simplecov'
   require 'coveralls'
 
@@ -17,10 +16,11 @@ if ENV['CI_ENABLE_COVERAGE']
     Coveralls::SimpleCov::Formatter
   ])
 
+if ENV['CI_ENABLE_COVERAGE']
   SimpleCov.start do
     add_filter '/test/'
-    add_group 'Resources', 'lib/resources'
-    add_group 'Matchers', 'lib/matchers'
+    add_group 'Resources', ['lib/resources', 'lib/inspec/resources']
+    add_group 'Matchers', ['lib/matchers', 'lib/inspec/matchers']
     add_group 'Backends', 'lib/inspec/backend'
   end
 end
