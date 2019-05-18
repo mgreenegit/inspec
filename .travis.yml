@@ -6,6 +6,7 @@ language: ruby
 cache: bundler
 dist: xenial
 os:
+  - linux
   - osx
 services:
 - docker
