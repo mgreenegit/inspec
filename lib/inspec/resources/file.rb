@@ -47,8 +47,8 @@ module Inspec::Resources
       product_version file_version version? md5sum sha256sum
       path basename source source_path uid gid
     }.each do |m|
-      define_method m.to_sym do |*args|
-        file.method(m.to_sym).call(*args)
+      define_method m do |*args|
+        file.send(m, *args)
       end
     end
 
@@ -155,10 +155,10 @@ module Inspec::Resources
       # to or less permissive than the desired mode (PASS). Otherwise, the files
       # mode is more permissive than the desired mode (FAIL).
 
-      max_mode = max_mode.rjust(4, '0')
-      binary_desired_mode = format('%04b', max_mode).to_i(2)
-      desired_mode_inverse = (binary_desired_mode ^ 0b111111111)
-      (desired_mode_inverse & file.mode).zero? ? false : true
+      max_mode = max_mode.to_i(8)
+      inv_mode = 0777 ^ max_mode
+
+      inv_mode & file.mode != 0
     end
 
     def to_s

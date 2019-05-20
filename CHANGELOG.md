@@ -1,10 +1,10 @@
 # Change Log
 <!-- usage documentation: http://expeditor-docs.es.chef.io/configuration/changelog/ -->
-<!-- latest_release 4.4.31 -->
-## [v4.4.31](https://github.com/inspec/inspec/tree/v4.4.31) (2019-05-18)
+<!-- latest_release 4.4.45 -->
+## [v4.4.45](https://github.com/inspec/inspec/tree/v4.4.45) (2019-05-20)
 
 #### Merged Pull Requests
-- Use #key? rather than #has_key? in profile_name ternary [#4101](https://github.com/inspec/inspec/pull/4101) ([miah](https://github.com/miah))
+- Minor require cleanup for telemetry. [#4107](https://github.com/inspec/inspec/pull/4107) ([zenspider](https://github.com/zenspider))
 <!-- latest_release -->
 
 <!-- release_rollup since=4.3.2 -->
@@ -19,6 +19,20 @@
 - Add inspec-*-bin to the plugin filter list [#4018](https://github.com/inspec/inspec/pull/4018) ([clintoncwolfe](https://github.com/clintoncwolfe)) <!-- 4.3.5 -->
 
 #### Merged Pull Requests
+- Minor require cleanup for telemetry. [#4107](https://github.com/inspec/inspec/pull/4107) ([zenspider](https://github.com/zenspider)) <!-- 4.4.45 -->
+- Fixed missing requires. [#4100](https://github.com/inspec/inspec/pull/4100) ([zenspider](https://github.com/zenspider)) <!-- 4.4.44 -->
+- Delete test/unit/helper.rb [#4108](https://github.com/inspec/inspec/pull/4108) ([zenspider](https://github.com/zenspider)) <!-- 4.4.43 -->
+- Stop using method(...).call(...) [#4115](https://github.com/inspec/inspec/pull/4115) ([zenspider](https://github.com/zenspider)) <!-- 4.4.42 -->
+- Clean more requires [#4116](https://github.com/inspec/inspec/pull/4116) ([zenspider](https://github.com/zenspider)) <!-- 4.4.41 -->
+- Just use math. [#4113](https://github.com/inspec/inspec/pull/4113) ([zenspider](https://github.com/zenspider)) <!-- 4.4.40 -->
+- Clean up API doco [#4114](https://github.com/inspec/inspec/pull/4114) ([zenspider](https://github.com/zenspider)) <!-- 4.4.39 -->
+- Add support for Gemfile.local [#4105](https://github.com/inspec/inspec/pull/4105) ([zenspider](https://github.com/zenspider)) <!-- 4.4.38 -->
+- Fix missing requires in toml, postgres_conf resources [#4119](https://github.com/inspec/inspec/pull/4119) ([miah](https://github.com/miah)) <!-- 4.4.37 -->
+- json was required twice. [#4118](https://github.com/inspec/inspec/pull/4118) ([miah](https://github.com/miah)) <!-- 4.4.36 -->
+- Fixes a test interaction bug between installer and loader. [#4111](https://github.com/inspec/inspec/pull/4111) ([zenspider](https://github.com/zenspider)) <!-- 4.4.35 -->
+- This needed to be a flat_map because :profiles was an array. [#4110](https://github.com/inspec/inspec/pull/4110) ([zenspider](https://github.com/zenspider)) <!-- 4.4.34 -->
+- Fix @unique_controls uninitialized warning [#4079](https://github.com/inspec/inspec/pull/4079) ([miah](https://github.com/miah)) <!-- 4.4.33 -->
+- Turn off logging in our test. [#4103](https://github.com/inspec/inspec/pull/4103) ([zenspider](https://github.com/zenspider)) <!-- 4.4.32 -->
 - Use #key? rather than #has_key? in profile_name ternary [#4101](https://github.com/inspec/inspec/pull/4101) ([miah](https://github.com/miah)) <!-- 4.4.31 -->
 - Fix @profile_name not initialized [#4081](https://github.com/inspec/inspec/pull/4081) ([miah](https://github.com/miah)) <!-- 4.4.30 -->
 - Fix circular require in telemetry [#4083](https://github.com/inspec/inspec/pull/4083) ([miah](https://github.com/miah)) <!-- 4.4.29 -->
